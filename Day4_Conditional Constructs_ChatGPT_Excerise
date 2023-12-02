@@ -1,0 +1,32 @@
+1. A company decided to give a bonus of 5% to an employee if his/her year ofservice is more than 5 years .Ask users for their salary and year of service and print the net bonus amount
+
+# Get user input for salary and years of service
+salary = float(input("Enter your salary: "))
+years_of_service = int(input("Enter your years of service: "))
+
+# Check if the employee is eligible for a bonus
+if years_of_service > 5:
+    bonus_percentage = 5
+    net_bonus = (bonus_percentage / 100) * salary
+    print(f"Congratulations! You are eligible for a {bonus_percentage}% bonus.")
+    print(f"Net bonus amount: ${net_bonus:.2f}")
+else:
+    print("Sorry, you are not eligible for a bonus.")
+
+
+
+2. A shop will give a discount of 10% if the cost of purchased quantity is morethan 1000.Ask user for quantity Suppose, one unit will cost 100.Judge and print total cost for user
+
+
+# Ask the user for the quantity of units
+quantity = int(input("Enter the quantity of units: "))
+# Assume the cost per unit is 100
+cost_per_unit = 100
+# Calculate the total cost
+total_cost = quantity * cost_per_unit
+# Check if the total cost is more than 1000 to apply a 10% discount
+if total_cost > 1000:
+    discount = 0.10 * total_cost
+    total_cost -= discount
+# Print the total cost for the user
+print(f"The total cost is: ${total_cost}")
