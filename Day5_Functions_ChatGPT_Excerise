@@ -1,0 +1,43 @@
+Help me develop a simple python program. I want to calculate the total electricity bill. The rules are as follows: Installed load: The installed load is the maximum amount of electricity that your home or business can use at any given time. This is measured in
+kilowatts (kW). The higher your installed load, the higher your fixed charges will be.Energy consumption: The energy consumption is the total amount of electricity that you use in a billing period. This is measured in units (kWh). The more electricity you
+consume, the higher your variable charges will be.Tariff slabs: The tariff slabs are the different rates per unit of electricity that you are charged. There are currently 4 tariff slabs in Bangalore:
+Up to 50 units: Rs 4.75/unit
+51 to 100 units: Rs 5.75/unit
+101 to 200 units: Rs 7/unit
+Above 200 units: Rs 8/unit
+The actual electricity charges that you pay will depend on your installed load, energy
+consumption, and the tariff slab that you fall into.
+
+
+def calculate_electricity_bill(installed_load, energy_consumption):
+    # Define tariff slabs
+    slab1_rate = 4.75
+    slab2_rate = 5.75
+    slab3_rate = 7
+    slab4_rate = 8
+    # Define slab limits
+    slab1_limit = 50
+    slab2_limit = 100
+    slab3_limit = 200
+    # Calculate fixed charges based on installed load
+    fixed_charges = installed_load * 20  # Assuming a fixed charge rate of Rs 20 per kW
+
+    # Calculate variable charges based on energy consumption and tariff slabs
+    if energy_consumption <= slab1_limit:
+        variable_charges = energy_consumption * slab1_rate
+    elif energy_consumption <= slab2_limit:
+        variable_charges = slab1_limit * slab1_rate + (energy_consumption - slab1_limit) * slab2_rate
+    elif energy_consumption <= slab3_limit:
+        variable_charges = slab1_limit * slab1_rate + (slab2_limit - slab1_limit) * slab2_rate + \
+                           (energy_consumption - slab2_limit) * slab3_rate
+    else:
+        variable_charges = slab1_limit * slab1_rate + (slab2_limit - slab1_limit) * slab2_rate + \
+                           (slab3_limit - slab2_limit) * slab3_rate + (energy_consumption - slab3_limit) * slab4_rate
+    # Calculate total electricity bill
+    total_bill = fixed_charges + variable_charges
+    return total_bill
+# Example usage
+installed_load = float(input("Enter installed load in kW: "))
+energy_consumption = float(input("Enter energy consumption in kWh: "))
+bill = calculate_electricity_bill(installed_load, energy_consumption)
+print(f"Your total electricity bill is Rs {bill:.2f}")
