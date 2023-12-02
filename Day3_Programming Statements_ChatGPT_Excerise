@@ -1,0 +1,20 @@
+1. Hi can you help me with a program in Python to accept two number from the user and calculate their square.
+# Accepting two numbers from the user
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+
+# Calculating the squares
+square1 = num1 ** 2
+square2 = num2 ** 2
+# Displaying the results
+print(f"The square of {num1} is: {square1}")
+print(f"The square of {num2} is: {square2}")
+
+2. I need to create a program to check if a number is even or odd. Please help with a program in Python to accept a number from the user and using ternary operator check whether the number is even or odd
+
+# Accept a number from the user
+num = int(input("Enter a number: "))
+# Use a ternary operator to check if the number is even or odd
+result = "Even" if num % 2 == 0 else "Odd"
+# Display the result
+print(f"The number {num} is {result}.")
