@@ -1,0 +1,23 @@
+1. Hi, can you help me to write a program in Python using a ternary operator to
+check whether the given number is even or odd. We need to specify a dummy
+number in the code.
+=>
+# Specify a dummy number
+dummy_number = 42
+
+# Use ternary operator to check if the number is even or odd
+result = "Even" if dummy_number % 2 == 0 else "Odd"
+# Print the result
+print(f"The number {dummy_number} is {result}.")
+
+2.Please help me with a program in Python to calculate the power of any number.
+We need to specify a dummy number in the code
+def calculate_power(base, exponent):
+    result = base ** exponent
+    return result
+# Specify your base and exponent here
+base_number = 2
+exponent_number = 3
+# Calculate and print the result
+result = calculate_power(base_number, exponent_number)
+print(f"{base_number} raised to the power of {exponent_number} is: {result}")
